@@ -1,12 +1,16 @@
 import './App.css'
 import * as z from 'zod';
-import jsonData from './tasks.json';
-import notesData from './notes.json';
-import { DataTable } from './components/data-table';
-import { columns } from './components/columns';
-import { columns as NoteCols } from './components/notes-columns';
-import { FancyMultiSelect } from './components/fancy-multi-select';
 
+import {
+	BrowserRouter as Router,
+	Route,
+	Routes,
+} from 'react-router-dom';
+import SideNav from './components/side-nav';
+import Home from './components/home';
+import AccountInfo from './components/account-info';
+import { ThemeProvider } from './components/theme-provider';
+import Messages from './components/messages';
 
 export const taskSchema = z.object({
   id: z.string(),
@@ -21,9 +25,9 @@ function App() {
   // const tasks = await getTasks()
   return (
     <>
-      <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
-        <FancyMultiSelect/>
-        <div className="flex items-center justify-between space-y-2">
+      {/* <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex"> */}
+        {/* <FancyMultiSelect/> */}
+        {/* <div className="flex items-center justify-between space-y-2">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
             <p className="text-muted-foreground">
@@ -31,11 +35,30 @@ function App() {
             </p>
           </div>
           <div className="flex items-center space-x-2">
-            {/* <UserNav /> */}
           </div>
-        </div>
-        <DataTable data={jsonData} columns={columns} />
-      </div>
+        </div> */}
+        {/* <DataTable data={jsonData} columns={columns} /> */}
+        <ThemeProvider>
+          <Router>
+            <Routes>
+              <Route path='/' element={<SideNav />}>
+                <Route
+                  path='/'
+                  element={<Home/>}
+                />
+                <Route
+                  path='/account-info'
+                  element={<AccountInfo/>}
+                />
+                <Route
+                  path='/messages'
+                  element={<Messages/>}
+                />
+              </Route>
+            </Routes>
+          </Router>
+        </ThemeProvider>
+      {/* </div> */}
     </>
   )
 }
