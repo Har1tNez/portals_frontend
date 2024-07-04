@@ -12,7 +12,7 @@ const Home = () => {
         <div className='flex'>
             <h2 className="inline-block text-2xl justify-self-start font-bold tracking-tight">Dashboard</h2>
         </div>
-        <Button>Hello</Button>
+        <Button/>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

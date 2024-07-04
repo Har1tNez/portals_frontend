@@ -6,10 +6,10 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+export const Button = () => {
   return (
-    <button onClick={onClick} className="px-4 py-2 bg-blue-500 text-white rounded">
-      {children}
+    <button>
+      sss
     </button>
   );
 };
