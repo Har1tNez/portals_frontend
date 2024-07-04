@@ -4,12 +4,15 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+  import { Button } from 'common-library';
+
 const Home = () => {
   return (
     <div className="flex-col align-start space-y-4 p-8 pt-6 h-screen">
         <div className='flex'>
             <h2 className="inline-block text-2xl justify-self-start font-bold tracking-tight">Dashboard</h2>
         </div>
+        <Button>Hello</Button>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <Card>
                   <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
